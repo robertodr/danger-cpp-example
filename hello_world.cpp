@@ -1,7 +1,11 @@
 #include <cstdlib>
 #include <iostream>
 
+std::string message() {
+  return "Hello, Danger world!";
+}
+
 int main() {
-  std::cout << "Hello, Danger world!" << std::endl;
+  std::cout << message() << std::endl;
   return EXIT_SUCCESS;
 }
