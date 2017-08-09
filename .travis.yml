@@ -10,3 +10,4 @@ script:
 - cd build
 - make
 - ctest
+- bundle exec danger
