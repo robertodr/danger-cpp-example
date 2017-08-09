@@ -1,11 +1,16 @@
 #include <cstdlib>
 #include <iostream>
+#include <vector>
+
+std::vector<int> myVector();
 
 std::string message() {
-  return "Hello, Danger world!";
+         return "Hello, Danger world!";
 }
 
 int main() {
   std::cout << message() << std::endl;
-  return EXIT_SUCCESS;
+
+  std::vector< int  > v = myVector();
+        return EXIT_SUCCESS;
 }

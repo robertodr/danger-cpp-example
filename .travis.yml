@@ -4,6 +4,10 @@ dist: trusty
 compiler: clang
 os: linux
 ruby: 2.2.0
+addons:
+  apt:
+    packages:
+      - clang-format-3.5
 before_script:
 - cmake --version
 - bundle install

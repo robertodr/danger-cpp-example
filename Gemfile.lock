@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/robertodr/danger-code_style_validation.git
+  revision: 30f4c419369c53b2975f4b768e459a12e41811db
+  specs:
+    danger-code_style_validation (0.0.1)
+      danger-plugin-api (~> 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -58,6 +65,7 @@ PLATFORMS
 
 DEPENDENCIES
   danger
+  danger-code_style_validation!
   danger-commit_lint
   danger-lgtm
   danger-the_coding_love

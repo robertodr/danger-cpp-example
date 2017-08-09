@@ -5,3 +5,4 @@ gem "danger"
 gem "danger-commit_lint"
 gem "danger-lgtm"
 gem "danger-the_coding_love"
+gem 'danger-code_style_validation', :git => 'https://github.com/robertodr/danger-code_style_validation.git'
