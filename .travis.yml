@@ -8,8 +8,8 @@ before_script:
 - cmake --version
 - bundle install
 script:
+- bundle exec danger
 - cmake -H. -Bbuild
 - cd build
 - make
 - ctest
-- bundle exec danger
