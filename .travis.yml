@@ -1,0 +1,12 @@
+language: cpp
+sudo: false
+dist: trusty
+compiler: clang
+os: linux
+before_script:
+- cmake --version
+script:
+- cmake -H. -Bbuild
+- cd build
+- make
+- ctest
