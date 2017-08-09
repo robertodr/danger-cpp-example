@@ -1,13 +1,25 @@
-# Sometimes it's a README fix, or something like that - which isn't relevant for
-# including in a project's CHANGELOG for example
+# Adapted from https://github.com/capistrano/danger/blob/master/Dangerfile
+# Q: What is a Dangerfile, anyway? A: See http://danger.systems/
+
+# ------------------------------------------------------------------------------
+# Additional pull request data
+# ------------------------------------------------------------------------------
+pr_number = github.pr_json["number"]
+pr_url = github.pr_json["_links"]["html"]["href"]
+# Sometimes its a README fix, or something like that - which isn't relevant for
+# including in a CHANGELOG for example
 declared_trivial = github.pr_title.include? "#trivial"
 
-# Make it more obvious that a PR is a work in progress and shouldn't be merged yet
+# Just to let people know
 warn("PR is classed as Work in Progress") if github.pr_title.include? "[WIP]"
 
-# Warn when there is a big PR
-warn("Big PR") if git.lines_of_code > 500
+# Ensure a clean commits history
+if git.commits.any? { |c| c.message =~ /^Merge branch '#{github.branch_for_base}'/ }
+  fail('Please rebase to get rid of the merge commits in this PR')
+end
 
-# Don't let testing shortcuts get into master by accident
-fail("fdescribe left in tests") if `grep -r fdescribe specs/ `.length > 1
-fail("fit left in tests") if `grep -r fit specs/ `.length > 1
+commit_lint.check
+
+lgtm.check_lgtm
+
+the_coding_love.random
