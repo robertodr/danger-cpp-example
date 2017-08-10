@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/robertodr/danger-code_style_validation.git
-  revision: 30f4c419369c53b2975f4b768e459a12e41811db
+  revision: 5ca556ea567ee0d95d3a3a0ec43de6fcaa06bcd5
   specs:
     danger-code_style_validation (0.0.1)
       danger-plugin-api (~> 1.0)
