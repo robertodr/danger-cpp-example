@@ -23,5 +23,3 @@ code_style_validation.check
 commit_lint.check
 
 lgtm.check_lgtm
-
-the_coding_love.random
