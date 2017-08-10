@@ -18,7 +18,7 @@ if git.commits.any? { |c| c.message =~ /^Merge branch '#{github.branch_for_base}
   fail('Please rebase to get rid of the merge commits in this PR')
 end
 
-code_style_validation.check
+code_style_validation.check file_extensions: ['.hpp', '.cpp', '.h', '.cc'] 
 
 commit_lint.check
 
