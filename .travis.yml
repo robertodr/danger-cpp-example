@@ -1,21 +1,43 @@
 language: cpp
 sudo: false
 dist: trusty
-compiler:
-  - clang
-  - gcc
-os: linux
 ruby: 2.2.0
+cache: bundler
 addons:
   apt:
     packages:
       - clang-format-3.5
+matrix:
+  include:
+    - os: linux
+      addons:
+        apt:
+          packages:
+            - g++
+      env:
+        - CXX_COMPILER='g++'
+        - RUN_DANGER=false
+    - os: linux
+      addons:
+        apt:
+          packages:
+            - clang
+            - clang-format-3.5
+      env:
+        - CXX_COMPILER='clang++'
+        - RUN_DANGER=true
 before_script:
 - cmake --version
-- bundle install
+- |
+  if [[ "${RUN_DANGER}" = true ]]; then
+    bundle install
+  fi
 script:
-- bundle exec danger
+- |
+  if [[ "${RUN_DANGER}" = true ]]; then
+    bundle exec danger 
+  fi
 - cmake -H. -Bbuild
 - cd build
-- make
+- cmake --build .
 - ctest
