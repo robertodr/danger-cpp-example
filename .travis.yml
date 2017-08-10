@@ -1,7 +1,9 @@
 language: cpp
 sudo: false
 dist: trusty
-compiler: clang
+compiler:
+  - clang
+  - gcc
 os: linux
 ruby: 2.2.0
 addons:
