@@ -6,7 +6,7 @@ cache: bundler
 addons:
   apt:
     packages:
-      - clang-format-3.5
+      - clang-format-3.9
 matrix:
   include:
     - os: linux
@@ -22,7 +22,7 @@ matrix:
         apt:
           packages:
             - clang
-            - clang-format-3.5
+            - clang-format-3.9
       env:
         - CXX_COMPILER='clang++'
         - RUN_DANGER=true
@@ -35,7 +35,7 @@ before_script:
 script:
 - |
   if [[ "${RUN_DANGER}" = true ]]; then
-    bundle exec danger 
+    bundle exec danger
   fi
 - cmake -H. -Bbuild
 - cd build
