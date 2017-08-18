@@ -1,8 +1,8 @@
 GIT
-  remote: https://github.com/robertodr/danger-code_style_validation.git
-  revision: dfaae35836857bef0c3eb8499bbe7ef45c354e22
+  remote: https://github.com/flix-tech/danger-code_style_validation.git
+  revision: 05925775fa1ba9cd3eda09437c8c7efba31ef59e
   specs:
-    danger-code_style_validation (0.0.1)
+    danger-code_style_validation (0.1.0)
       danger-plugin-api (~> 1.0)
 
 GEM
@@ -38,7 +38,7 @@ GEM
     danger-the_coding_love (0.0.4)
       danger-plugin-api (~> 1.0)
       nokogiri
-    faraday (0.12.2)
+    faraday (0.13.0)
       multipart-post (>= 1.2, < 3)
     faraday-http-cache (1.3.1)
       faraday (~> 0.8)
@@ -65,7 +65,7 @@ PLATFORMS
 
 DEPENDENCIES
   danger
-  danger-code_style_validation!
+  danger-code_style_validation (= 0.1.0)!
   danger-commit_lint
   danger-lgtm
   danger-the_coding_love
